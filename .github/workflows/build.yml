@@ -16,13 +16,14 @@ jobs:
     steps:
     - uses: actions/checkout@v4
 
-    - name: Install
+    - name: Install spchapi
       working-directory: ${{ github.workspace }}
-      run: |
-        spchapi.exe
-        tv_enua.exe
+      run: .\spchapi.exe
+    - name: Install tv_enua
+      working-directory: ${{ github.workspace }}
+      run: .\tv_enua.exe
     - name: Visual Studio shell
       uses: egor-tensin/vs-shell@v2
     - name: Build
       working-directory: ${{ github.workspace }}
-      run: build.bat
+      run: .\build.bat
