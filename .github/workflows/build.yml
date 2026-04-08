@@ -17,7 +17,7 @@ jobs:
     - uses: actions/checkout@v4
 
     - name: Install
-      run: --
+      run:
         spchapi.exe
         tv_enua.exe
     - name: Visual Studio shell
