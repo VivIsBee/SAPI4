@@ -21,7 +21,10 @@ jobs:
       run: .\spchapi.exe
     - name: Install tv_enua
       working-directory: ${{ github.workspace }}
-      run: .\tv_enua.exe
+      run: .\tv_enua.exe /Q
+    - name: Install SAPI4SDK
+      working-directory: ${{ github.workspace }}
+      run: .\SAPI4SDK.exe /Q
     - name: Visual Studio shell
       uses: egor-tensin/vs-shell@v2
     - name: Build
