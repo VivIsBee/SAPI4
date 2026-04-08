@@ -1,0 +1,30 @@
+name: Build
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Install
+      run: --
+        spchapi.exe
+        tv_enua.exe
+    - name: Visual Studio shell
+      uses: egor-tensin/vs-shell@v2
+      with:
+        # Target architecture
+        arch: # optional, default is x64
+            
+    - name: Build
+      run: build.bat
